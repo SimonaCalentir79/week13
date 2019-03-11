@@ -127,5 +127,18 @@ namespace FirstUnitTests
 
             return calc.Divide(a, b);
         }
+
+        //Exceptii
+
+        [Test]
+        public void ThrowExceptionWhenDividedByZero()
+        {
+            //arrange
+            var a = 150.5;
+            var b = 0;
+
+            //act & assert
+            Assert.Throws(typeof(DivideByZeroException), () => calc.Divide(a, b));
+        }
     }
 }
